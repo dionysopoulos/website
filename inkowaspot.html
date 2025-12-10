@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iknowaspot</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a class="brand" href="#">iknowaspot</a>
+      <nav class="nav-links">
+        <a href="#spots">Discover</a>
+        <a href="#submit">Add a Spot</a>
+        <a href="#typeform" class="btn-primary btn-small">Log in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="container">
+      <h1>Find & share hidden gems</h1>
+      <h2>Log your favorite hangout spots and keep the good places alive.</h2>
+      <a href="#submit" class="btn-accent btn-large">Add your first spot</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-3">
+      <div class="feature">
+        <img class="feature-icon" src="images/person.jpg" alt="Private by default">
+        <div class="feature-content">
+          <h3>Private by default</h3>
+          <p>Keep your spots personal or share with friends.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img class="feature-icon" src="images/note.jpg" alt="Rich notes">
+        <div class="feature-content">
+          <h3>Rich notes</h3>
+          <p>Tags, photos, and memories so you never forget why it’s special.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img class="feature-icon" src="images/fast.jpg" alt="Fast on the go">
+        <div class="feature-content">
+          <h3>Fast on the go</h3>
+          <p>Save a spot in seconds, wherever you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spots" class="section section-alt">
+    <div class="container">
+      <h2>Popular near you</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="images/rooftopview.jpg" alt="Rooftop view" class="card-cover">
+          <div class="card-body">
+            <div class="card-owner">
+              <img class="avatar" src="images/dude.jpg" alt="User avatar">
+              <span>Nick • Rooftop nook</span>
+            </div>
+            <p>Sunset, jazz, and a skyline view.</p>
+            <div class="tags">
+              <span class="tag">rooftop</span>
+              <span class="tag">sunset</span>
+              <span class="tag">chill</span>
+            </div>
+            <a href="#" class="btn-secondary">View</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/cafe.jpg" alt="Cafe" class="card-cover">
+          <div class="card-body">
+            <div class="card-owner">
+              <img class="avatar" src="images/girl.jpg" alt="User avatar">
+              <span>Elena • Quiet café</span>
+            </div>
+            <p>Cozy, pastries that slap.</p>
+            <div class="tags">
+              <span class="tag">work</span>
+              <span class="tag">coffee</span>
+              <span class="tag">cozy</span>
+            </div>
+            <a href="#" class="btn-secondary">View</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/galatsiview.jpg" alt="hangout spot" class="card-cover">
+          <div class="card-body">
+            <div class="card-owner">
+              <img class="avatar" src="images/chillguy.jpg" alt="User avatar">
+              <span>Kostas • Great hangout spot</span>
+            </div>
+            <p>Golden hour, dangerous sometimes!</p>
+            <div class="tags">
+              <span class="tag">walk</span>
+              <span class="tag">view</span>
+              <span class="tag">free</span>
+            </div>
+            <a href="#" class="btn-secondary">View</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="submit" class="section">
+    <div class="container">
+      <h2>Add a spot</h2>
+      <form class="spot-form" action="#">
+        <div class="form-row">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="e.g. Hidden tea house" required>
+        </div>
+        <div class="form-row">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="Address or coordinates" required>
+        </div>
+        <div class="form-row grid-2">
+          <div>
+            <label for="tags">Tags</label>
+            <input id="tags" name="tags" type="text" placeholder="cozy, study, dates">
+          </div>
+          <div>
+            <label for="photo">Photo URL</label>
+            <input id="photo" name="photo" type="url" placeholder="https://...">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Why is this spot special?"></textarea>
+        </div>
+        <button class="btn-primary" type="submit">Save spot</button>
+      </form>
+    </div>
+  </section>
+  <div id="typeform" data-tf-live="01K9QKW7XFBF4VNGDNSKNTRB4X"></div>
+  <script src="//embed.typeform.com/next/embed.js"></script>
+
+  <script>
+    (function() {
+      function smoothScrollToElement(el) {
+        if (!el) return;
+        var rect = el.getBoundingClientRect();
+        var targetY = window.pageYOffset + rect.top;
+        window.scrollTo({ top: targetY - 20, behavior: 'smooth' });
+        setTimeout(function() {
+          el.setAttribute('tabindex', '-1');
+          el.focus({ preventScroll: true });
+        }, 600);
+      }
+
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href="#typeform"]');
+        if (!link) return;
+        e.preventDefault();
+        var tf = document.getElementById('typeform');
+        smoothScrollToElement(tf);
+      });
+    })();
+  </script>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>iknowaspot</strong>
+        <p class="muted">Share hidden gems with your future self.</p>
+      </div>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+
+</html>

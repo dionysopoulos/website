@@ -1,0 +1,19 @@
+.banner {
+  background-image:
+    linear-gradient(160deg, rgba(91, 33, 182, .95) 0%, rgba(91, 33, 182, .65) 50%, rgba(255, 107, 107, .75) 100%),
+    url("../../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 160px 20px;
+  border-radius: 0 0 48px 48px;
+  box-shadow: var(--shadow);
+  min-height: 60vh;
+}
